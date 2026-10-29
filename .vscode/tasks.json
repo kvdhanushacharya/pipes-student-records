@@ -1,0 +1,30 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build student record processor",
+      "type": "process",
+      "command": "gcc",
+      "args": [
+        "-Wall",
+        "-Wextra",
+        "-g",
+        "${workspaceFolder}\\main.c",
+        "-o",
+        "${workspaceFolder}\\student_records.exe"
+      ],
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": ["$gcc"],
+      "group": { "kind": "build", "isDefault": true }
+    },
+    {
+      "label": "Run student record processor",
+      "type": "process",
+      "command": "${workspaceFolder}\\student_records.exe",
+      "dependsOn": "Build student record processor",
+      "dependsOrder": "sequence",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    }
+  ]
+}
